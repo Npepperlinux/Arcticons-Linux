@@ -1,0 +1,35 @@
+name: icon-theme-arcticons
+adopt-info: arcticons
+base: bare
+build-base: core24
+summary: Latest Complete Set of Arcticons
+description: |
+  This snap provides the Arcticons Theme in a form that can be used by other snapped applications.
+  It can be installed alongside the gtk-common-themes snap.
+source-code:
+  - https://github.com/Arcticons-Team/Arcticons-Linux
+issues:
+  - https://github.com/Arcticons-Team/Arcticons-Linux/issues
+grade: stable
+compression: lzo
+confinement: strict
+
+slots:
+  icon-themes:
+    interface: content
+    source:
+      read:
+        - $SNAP/usr/share/icons/arcticons-light
+        - $SNAP/usr/share/icons/arcticons-dark
+
+parts:
+  arcticons:
+    source: .
+    plugin: nil
+    build-packages:
+      - git
+    override-pull: |
+      craftctl default
+      craftctl set version=$(git describe --tags --abbrev=0)
+    organize:
+      "arcticons-*":  usr/share/icons/

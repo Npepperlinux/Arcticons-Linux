@@ -7,3 +7,4 @@ other
 .ruff_cache/
 __pycache__/
 .venv/
+*.snap
