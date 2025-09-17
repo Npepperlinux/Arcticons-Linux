@@ -36,6 +36,7 @@ apps:
 archiver:
 - apps/archivemanager
 - apps/org.gnome.ArchiveManager
+- apps/org.gnome.FileRoller
 ardour:
 - apps/ardour8
 arduinodroid:
@@ -49,7 +50,9 @@ arduinodroid:
 attestationdedeplacement:
 - apps/kakoune
 backup:
+- apps/deja-dup
 - apps/mintbackup
+- apps/org.gnome.DejaDup
 balatro:
 - apps/steam_icon_2379780
 baldurs_gate_3:
@@ -113,6 +116,8 @@ calibrecompanion:
 - mimetypes/gnome-mime-text-lrs
 - mimetypes/text-lrs
 camera:
+- apps/org.gnome.Cheese
+- apps/org.gnome.Snapshot
 - devices/camera-photo
 celeste:
 - apps/steam_icon_504230
@@ -479,6 +484,7 @@ galaxystore:
 gallery:
 - apps/gthumb
 - apps/image_viewer
+- apps/org.gnome.Loupe
 - apps/org.gnome.eog
 - apps/org.gnome.gThumb
 - apps/xviewer
@@ -511,6 +517,7 @@ ghostwriter:
 - apps/ghostwriter
 gimp:
 - apps/gimp
+- apps/org.gimp.GIMP
 gnome-tweaks:
 - apps/org.gnome.tweaks
 godot:
@@ -521,6 +528,12 @@ google_chrome:
 - apps/google-chrome
 - apps/google-chrome2
 - apps/google_chrome
+google_chrome_beta:
+- apps/google-chrome-beta
+google_chrome_canary:
+- apps/google-chrome-canary
+google_chrome_dev:
+- apps/google-chrome-unstable
 gwenview:
 - apps/gwenview
 half_life:
@@ -580,6 +593,8 @@ iriunwebcam:
 - devices/camera-web
 jellydrift:
 - apps/steam_icon_1740930
+jellyfin:
+- app/com.github.iwalton3.jellyfin-media-player
 kde_connect:
 - apps/kdeconnect
 - preferences/kdeconnect
@@ -663,7 +678,7 @@ mail:
 - apps/kmail
 - emblems/emblem-mail
 mattermost:
-- matermost-desktop
+- apps/mattermost-desktop
 mediaplayer:
 - apps/mpv
 - categories/applications-multimedia
@@ -674,12 +689,15 @@ microsoft:
 microsoft_edge:
 - apps/microsoft-edge
 microsoft_edge_beta:
-- apps/microsft-edge-beta
+- apps/microsoft-edge-beta
 microsoft_edge_dev:
-- apps/microsft-edge-dev
+- apps/microsoft-edge-dev
+microsoft_outlook:
+- apps/msedge-faolnafnngnfdaknnbpnkhgohbobgegn-Default
 microsoft_planner:
 - apps/microsoft_planner
 microsoft_teams:
+- apps/msedge-cifhbcnohmdccbgoicgdjpfamggdegmo-Default
 - apps/teams
 mindustry:
 - apps/mindustry
@@ -781,6 +799,8 @@ papers_please:
 paperwork:
 - apps/paperwork
 - apps/work.openpaper.Paperwork
+parsec:
+- apps/parsecd
 plagueinc:
 - apps/steam_icon_246620
 plants_vs_zombies:
@@ -921,8 +941,6 @@ simpletexteditor:
 - apps/QOwnNotes
 - apps/kate
 - apps/kate2
-simpleweather:
-- apps/org.gnome.Weather
 skyrim:
 - apps/steam_icon_365720
 - apps/steam_icon_489830
@@ -1109,6 +1127,7 @@ telegram:
 - apps/telegram-desktop-bin
 terminal:
 - apps/alacritty
+- apps/app.devsuite.Ptyxis
 - apps/com.alacritty.Alacritty
 - apps/foot
 - apps/gnome-xterm
@@ -1195,6 +1214,8 @@ vrchat:
 - apps/steam_icon_438100
 vscodium:
 - apps/vscodium
+weather:
+- apps/org.gnome.Weather
 whatsapp:
 - apps/whatsapp
 wifi:
