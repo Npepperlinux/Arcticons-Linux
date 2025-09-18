@@ -182,6 +182,7 @@ discord:
 - apps/com.discordapp.Discord
 - apps/dev.vencord.Vesktop
 - apps/discord
+- apps/discord-canary
 - apps/startarmcord
 - apps/webcord
 - apps/xyz.armcord.ArmCord
@@ -1131,6 +1132,7 @@ terminal:
 - apps/com.alacritty.Alacritty
 - apps/foot
 - apps/gnome-xterm
+- apps/org.gnome.Ptyxis
 - apps/org.gnome.Terminal
 - apps/org.xfce.terminal
 - apps/org.xfce.terminalemulator
