@@ -595,7 +595,7 @@ iriunwebcam:
 jellydrift:
 - apps/steam_icon_1740930
 jellyfin:
-- app/com.github.iwalton3.jellyfin-media-player
+- apps/com.github.iwalton3.jellyfin-media-player
 kde_connect:
 - apps/kdeconnect
 - preferences/kdeconnect
