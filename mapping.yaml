@@ -126,6 +126,9 @@ citra:
 - apps/citra
 cleantimer:
 - apps/org.gnome.Sysprof
+clion:
+- apps/clion
+- apps/com.jetbrains.CLion
 clock:
 - apps/org.gnome.clocks
 - apps/org.kde.kclock
@@ -156,6 +159,12 @@ darktable:
 - apps/darktable
 data_monitor:
 - apps/org.gnome.SystemMonitor
+datagrip:
+- apps/com.jetbrains.DataGrip
+- apps/datagrip
+dataspell:
+- apps/com.jetbrains.DataSpell
+- apps/dataspell
 date_and_time:
 - apps/org.gnome.Settings-time
 ddnet:
@@ -200,6 +209,10 @@ doom_2:
 - apps/steam_icon_2300
 doom_3:
 - apps/steam_icon_208200
+dotmemory:
+- apps/dotmemory
+dottrace:
+- apps/dottrace
 downloads:
 - emblems/emblem-downloads
 downwell:
@@ -502,6 +515,8 @@ gamma:
 - preferences/preferences-desktop-display-color
 garden_story:
 - apps/steam_icon_1062140
+gateway:
+- apps/gateway
 gcompris:
 - apps/gcompris
 - apps/org.kde.gcompris
@@ -516,6 +531,9 @@ gnome-tweaks:
 godot:
 - apps/godot
 - apps/steam_icon_404790
+goland:
+- apps/com.jetbrains.GoLand
+- apps/goland
 google_chrome:
 - apps/chromium
 - apps/google-chrome
@@ -781,6 +799,9 @@ papers_please:
 paperwork:
 - apps/paperwork
 - apps/work.openpaper.Paperwork
+phpstorm:
+- apps/com.jetbrains.PhpStorm
+- apps/phpstorm
 plagueinc:
 - apps/steam_icon_246620
 plants_vs_zombies:
@@ -820,6 +841,10 @@ proton_vpn:
 prusaslicer:
 - apps/com.prusa3d.PrusaSlicer
 - apps/prusaslicer
+pycharm:
+- apps/com.jetbrains.PyCharm
+- apps/com.jetbrains.PyCharm-Professional
+- apps/pycharm
 qalculate:
 - apps/qalculate
 qbittorrent_remote:
@@ -850,6 +875,9 @@ removable_storage:
 - preferences/drive-removable-media
 retroarch:
 - apps/retroarch
+rider:
+- apps/com.jetbrains.Rider
+- apps/rider
 risk_of_rain_2:
 - apps/steam_632360
 rnote:
@@ -860,6 +888,12 @@ rog:
 - apps/rog-control-center
 rss:
 - apps/akregator
+rubymine:
+- apps/com.jetbrains.RubyMine
+- apps/rubymine
+rustrover:
+- apps/com.jetbrains.RustRover
+- apps/rustrover
 samrewritten:
 - apps/samrewritten
 satisfactory:
@@ -1143,6 +1177,8 @@ thunderbird:
 - apps/thunderbird
 thunderbolt:
 - preferences/preferences-desktop-thunderbolt
+toolbox:
+- apps/toolbox
 torbrowser:
 - apps/org.torproject.torbrowser-launcher
 - apps/tor
@@ -1195,6 +1231,9 @@ vrchat:
 - apps/steam_icon_438100
 vscodium:
 - apps/vscodium
+webstorm:
+- apps/com.jetbrains.WebStorm
+- apps/webstorm
 whatsapp:
 - apps/whatsapp
 wifi:
