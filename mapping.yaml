@@ -1207,6 +1207,8 @@ vlc:
 - apps/vlc
 - apps/vlc-kb
 - apps/vlc-xmas
+volcanoids:
+- apps/steam_icon_951440
 volume:
 - apps/org.gnome.Settings-sound
 - apps/pavucontrol
