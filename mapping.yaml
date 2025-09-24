@@ -27,6 +27,8 @@ android_studio:
 - apps/androidstudio
 apex_legends:
 - apps/steam_icon_1172470
+app-center:
+- apps/app-center
 appearance:
 - apps/org.gnome.Settings-appearance
 - preferences/preferences-desktop-theme-applications
@@ -85,6 +87,10 @@ bluetooth_disabled:
 - status/blueman-disabled
 bonfire_peaks:
 - apps/steam_icon_1147890
+bottles:
+- apps/com.usebottles.bottles
+boxes:
+- apps/org.gnome.Boxes
 broken_age:
 - apps/steam_icon_232790
 brotato:
@@ -479,6 +485,9 @@ forza_motorsport:
 - apps/steam_icon_2440510
 freecad:
 - apps/freecad
+freelens:
+- apps/app.freelens.Freelens
+- apps/freelens
 galaxystore:
 - apps/org.kde.discover
 - apps/plasmadiscover
@@ -580,6 +589,8 @@ hibernator:
 - apps/system-hibernate
 hollow_knight:
 - apps/steam_icon_367520
+htop:
+- apps/htop
 hue_game:
 - apps/steam_icon_383270
 idea:
@@ -652,6 +663,9 @@ libreoffice_impress:
 - mimetypes/libreoffice-oasis-presentation-template
 - mimetypes/libreoffice-presentation
 - mimetypes/libreoffice-presentation-template
+libreoffice-math:
+- apps/libreoffice-math
+- mimetypes/libreoffice-oasis-formula
 libreoffice_writer:
 - apps/libreoffice-writer
 - mimetypes/libreoffice-oasis-text
@@ -953,6 +967,8 @@ slay_the_spire:
 snakebird:
 - apps/steam_icon_1014140
 - apps/steam_icon_357300
+software:
+- apps/org.gnome.Software
 sokpop:
 - apps/steam_icon_1003730
 - apps/steam_icon_1097090
@@ -1249,5 +1265,8 @@ yubico_authenticator:
 - apps/yubioath-desktop
 yuzu:
 - apps/yuzu
+zed:
+- apps/dev.zed.Zed
+- apps/zed
 zoom:
 - apps/zoom-desktop
