@@ -147,6 +147,9 @@ crashontherun:
 - apps/steam_icon_731490
 creaks:
 - apps/steam_icon_956030
+cryptomator:
+- apps/org.cryptomator.Cryptomator
+- apps/org.cryptomator.Cryptomator.tray
 cube_escape:
 - apps/steam_icon_1292940
 - apps/steam_icon_909080
@@ -516,6 +519,8 @@ gnome-tweaks:
 godot:
 - apps/godot
 - apps/steam_icon_404790
+google:
+- apps/goa-account-google
 google_chrome:
 - apps/chromium
 - apps/google-chrome
@@ -670,7 +675,11 @@ mediaplayer:
 meld:
 - apps/org.gnome.Meld
 microsoft:
+- apps/goa-account-microsoft
+- apps/goa-account-msn
 - categories/applications-all
+microsoft_365:
+- apps/goa-account-ms365
 microsoft_edge:
 - apps/microsoft-edge
 microsoft_edge_beta:
@@ -734,6 +743,7 @@ network_utilities:
 - apps/org.gnome.Settings-network
 - apps/preferences-system-network
 nextcloud:
+- apps/goa-account-owncloud
 - apps/Nextcloud
 - apps/nextcloud
 no_mans_sky:
@@ -850,6 +860,8 @@ removable_storage:
 - preferences/drive-removable-media
 retroarch:
 - apps/retroarch
+revolution_idle:
+- apps/steam_icon_2763740
 risk_of_rain_2:
 - apps/steam_632360
 rnote:
@@ -1038,6 +1050,8 @@ sokpop:
 - apps/steam_icon_2618090
 - apps/steam_icon_561190
 - apps/steam_icon_932850
+sonic_rumble:
+- apps/steam_icon_2951690
 sonic_the_hedgehog:
 - apps/steam_icon_1237320
 - apps/steam_icon_1794960
@@ -1096,12 +1110,16 @@ supertux:
 - apps/supertux
 suspend:
 - apps/system-suspend
+symbol_at:
+- apps/org.gnome.Settings-online-accounts
 symbol_exclamation_mark:
 - emblems/emblem-unreadable
 syncthing:
 - apps/syncthing
 systemusagedirect:
 - categories/applications-system
+taskbar:
+- apps/org.gnome.Settings-multitasking
 telegram:
 - apps/org.telegram.desktop
 - apps/telegram
@@ -1160,6 +1178,9 @@ trashcan:
 - places/user-trash-full
 ubuntu:
 - apps/preferences-ubuntu-panel
+uma_musume_pretty_derby:
+- apps/steam_icon_3224770
+- apps/steam_icon_3564400
 update:
 - apps/system-software-update
 user_manual:
