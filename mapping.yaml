@@ -155,6 +155,8 @@ cube_escape:
 - apps/steam_icon_909080
 cult_of_the_lamb:
 - apps/steam_icon_1313140
+cursor_ai:
+- apps/co.anysphere.cursor
 darktable:
 - apps/darktable
 data_monitor:
@@ -662,6 +664,10 @@ lock:
 - apps/system-lock-screen
 logout:
 - apps/system-log-out
+machinika_atlas:
+- apps/steam_icon_2817620
+machinika_museum:
+- apps/steam_icon_1507190
 magic:
 - apps/steam_icon_2141910
 mail:
@@ -686,6 +692,8 @@ microsoft_edge_beta:
 - apps/microsft-edge-beta
 microsoft_edge_dev:
 - apps/microsft-edge-dev
+microsoft_exchange:
+- apps/goa-account-exchange
 microsoft_planner:
 - apps/microsoft_planner
 microsoft_teams:
@@ -791,6 +799,12 @@ papers_please:
 paperwork:
 - apps/paperwork
 - apps/work.openpaper.Paperwork
+pico_park:
+- apps/steam_icon_1509960
+pico_park_2:
+- apps/steam_icon_2644470
+pico_park_classic:
+- apps/steam_icon_461040
 plagueinc:
 - apps/steam_icon_246620
 plants_vs_zombies:
@@ -1050,6 +1064,8 @@ sokpop:
 - apps/steam_icon_2618090
 - apps/steam_icon_561190
 - apps/steam_icon_932850
+solaar:
+- apps/solaar
 sonic_rumble:
 - apps/steam_icon_2951690
 sonic_the_hedgehog:
