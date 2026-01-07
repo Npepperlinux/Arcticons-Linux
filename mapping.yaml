@@ -643,31 +643,39 @@ letter_uppercase_square_z:
 libreoffice:
 - apps/libreoffice-main
 - apps/libreoffice-startcenter
+- apps/org.libreoffice.LibreOffice.main
+- apps/org.libreoffice.LibreOffice.startcenter
 - categories/applications-office
 libreoffice_base:
 - apps/libreoffice-base
+- apps/org.libreoffice.LibreOffice.base
 - mimetypes/libreoffice-oasis-database
 libreoffice_calc:
 - apps/libreoffice-calc
+- apps/org.libreoffice.LibreOffice.calc
 - mimetypes/libreoffice-oasis-spreadsheet
 - mimetypes/libreoffice-oasis-spreadsheet-template
 - mimetypes/libreoffice-spreadsheet
 - mimetypes/libreoffice-spreadsheet-template
 libreoffice_draw:
 - apps/libreoffice-draw
+- apps/org.libreoffice.LibreOffice.draw
 - mimetypes/libreoffice-oasis-drawing
 - mimetypes/libreoffice-oasis-drawing-template
 libreoffice_impress:
 - apps/libreoffice-impress
+- apps/org.libreoffice.LibreOffice.impress
 - mimetypes/libreoffice-oasis-presentation
 - mimetypes/libreoffice-oasis-presentation-template
 - mimetypes/libreoffice-presentation
 - mimetypes/libreoffice-presentation-template
 libreoffice-math:
 - apps/libreoffice-math
+- apps/org.libreoffice.LibreOffice.math
 - mimetypes/libreoffice-oasis-formula
 libreoffice_writer:
 - apps/libreoffice-writer
+- apps/org.libreoffice.LibreOffice.writer
 - mimetypes/libreoffice-oasis-text
 - mimetypes/libreoffice-oasis-text-template
 - mimetypes/libreoffice-text
