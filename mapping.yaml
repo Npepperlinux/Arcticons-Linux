@@ -675,7 +675,7 @@ libreoffice_impress:
 - mimetypes/libreoffice-oasis-presentation-template
 - mimetypes/libreoffice-presentation
 - mimetypes/libreoffice-presentation-template
-libreoffice-math:
+libreoffice_math:
 - apps/libreoffice-math
 - apps/org.libreoffice.LibreOffice.math
 - mimetypes/libreoffice-oasis-formula
@@ -771,6 +771,8 @@ mozc:
 - apps/mozc
 mscore4portable:
 - apps/mscore4portable
+multimc:
+- apps/multimc
 musescore:
 - apps/mscore
 music:
@@ -1237,6 +1239,7 @@ vivaldi:
 vivaldi_snapshot:
 - apps/vivaldi-snapshot
 vlc:
+- apps/org.videolan.VLC
 - apps/vlc
 - apps/vlc-kb
 - apps/vlc-xmas
