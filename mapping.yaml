@@ -514,6 +514,9 @@ geometry_dash:
 - apps/steam_icon_322170
 ghostwriter:
 - apps/ghostwriter
+github:
+- apps/github-desktop-plus
+- apps/github-desktop
 gimp:
 - apps/gimp
 gnome-tweaks:
@@ -752,7 +755,6 @@ network_utilities:
 - apps/preferences-system-network
 nextcloud:
 - apps/goa-account-owncloud
-- apps/Nextcloud
 - apps/nextcloud
 no_mans_sky:
 - apps/steam_icon_275850
