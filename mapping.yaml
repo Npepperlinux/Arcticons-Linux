@@ -27,6 +27,8 @@ android_studio:
 - apps/androidstudio
 apex_legends:
 - apps/steam_icon_1172470
+app-center:
+- apps/app-center
 appearance:
 - apps/org.gnome.Settings-appearance
 - preferences/preferences-desktop-theme-applications
@@ -36,6 +38,7 @@ apps:
 archiver:
 - apps/archivemanager
 - apps/org.gnome.ArchiveManager
+- apps/org.gnome.FileRoller
 ardour:
 - apps/ardour8
 arduinodroid:
@@ -49,7 +52,9 @@ arduinodroid:
 attestationdedeplacement:
 - apps/kakoune
 backup:
+- apps/deja-dup
 - apps/mintbackup
+- apps/org.gnome.DejaDup
 balatro:
 - apps/steam_icon_2379780
 baldurs_gate_3:
@@ -82,6 +87,10 @@ bluetooth_disabled:
 - status/blueman-disabled
 bonfire_peaks:
 - apps/steam_icon_1147890
+bottles:
+- apps/com.usebottles.bottles
+boxes:
+- apps/org.gnome.Boxes
 broken_age:
 - apps/steam_icon_232790
 brotato:
@@ -113,6 +122,8 @@ calibrecompanion:
 - mimetypes/gnome-mime-text-lrs
 - mimetypes/text-lrs
 camera:
+- apps/org.gnome.Cheese
+- apps/org.gnome.Snapshot
 - devices/camera-photo
 celeste:
 - apps/steam_icon_504230
@@ -191,6 +202,7 @@ discord:
 - apps/com.discordapp.Discord
 - apps/dev.vencord.Vesktop
 - apps/discord
+- apps/discord-canary
 - apps/startarmcord
 - apps/webcord
 - apps/xyz.armcord.ArmCord
@@ -408,6 +420,8 @@ firefox_nightly:
 flameshot:
 - apps/flameshot
 - apps/org.flameshot.Flameshot
+flatseal:
+- apps/com.github.tchx84.Flatseal
 fluffychat:
 - apps/fluffychat
 folder:
@@ -491,12 +505,16 @@ forza_motorsport:
 - apps/steam_icon_2440510
 freecad:
 - apps/freecad
+freelens:
+- apps/app.freelens.Freelens
+- apps/freelens
 galaxystore:
 - apps/org.kde.discover
 - apps/plasmadiscover
 gallery:
 - apps/gthumb
 - apps/image_viewer
+- apps/org.gnome.Loupe
 - apps/org.gnome.eog
 - apps/org.gnome.gThumb
 - apps/xviewer
@@ -527,6 +545,8 @@ gcompris:
 - apps/org.kde.gcompris
 geometry_dash:
 - apps/steam_icon_322170
+ghostty:
+- apps/com.mitchellh.ghostty
 ghostwriter:
 - apps/ghostwriter
 github:
@@ -534,6 +554,7 @@ github:
 - apps/github-desktop
 gimp:
 - apps/gimp
+- apps/org.gimp.GIMP
 gnome-tweaks:
 - apps/org.gnome.tweaks
 godot:
@@ -549,6 +570,12 @@ google_chrome:
 - apps/google-chrome
 - apps/google-chrome2
 - apps/google_chrome
+google_chrome_beta:
+- apps/google-chrome-beta
+google_chrome_canary:
+- apps/google-chrome-canary
+google_chrome_dev:
+- apps/google-chrome-unstable
 gwenview:
 - apps/gwenview
 half_life:
@@ -594,6 +621,8 @@ hibernator:
 - apps/system-hibernate
 hollow_knight:
 - apps/steam_icon_367520
+htop:
+- apps/htop
 hue_game:
 - apps/steam_icon_383270
 idea:
@@ -606,8 +635,12 @@ inkscape:
 - apps/org.inkscape.Inkscape
 iriunwebcam:
 - devices/camera-web
+is_this_seat_taken:
+- apps/steam_icon_3035120
 jellydrift:
 - apps/steam_icon_1740930
+jellyfin:
+- apps/com.github.iwalton3.jellyfin-media-player
 kde_connect:
 - apps/kdeconnect
 - preferences/kdeconnect
@@ -644,28 +677,39 @@ letter_uppercase_square_z:
 libreoffice:
 - apps/libreoffice-main
 - apps/libreoffice-startcenter
+- apps/org.libreoffice.LibreOffice.main
+- apps/org.libreoffice.LibreOffice.startcenter
 - categories/applications-office
 libreoffice_base:
 - apps/libreoffice-base
+- apps/org.libreoffice.LibreOffice.base
 - mimetypes/libreoffice-oasis-database
 libreoffice_calc:
 - apps/libreoffice-calc
+- apps/org.libreoffice.LibreOffice.calc
 - mimetypes/libreoffice-oasis-spreadsheet
 - mimetypes/libreoffice-oasis-spreadsheet-template
 - mimetypes/libreoffice-spreadsheet
 - mimetypes/libreoffice-spreadsheet-template
 libreoffice_draw:
 - apps/libreoffice-draw
+- apps/org.libreoffice.LibreOffice.draw
 - mimetypes/libreoffice-oasis-drawing
 - mimetypes/libreoffice-oasis-drawing-template
 libreoffice_impress:
 - apps/libreoffice-impress
+- apps/org.libreoffice.LibreOffice.impress
 - mimetypes/libreoffice-oasis-presentation
 - mimetypes/libreoffice-oasis-presentation-template
 - mimetypes/libreoffice-presentation
 - mimetypes/libreoffice-presentation-template
+libreoffice_math:
+- apps/libreoffice-math
+- apps/org.libreoffice.LibreOffice.math
+- mimetypes/libreoffice-oasis-formula
 libreoffice_writer:
 - apps/libreoffice-writer
+- apps/org.libreoffice.LibreOffice.writer
 - mimetypes/libreoffice-oasis-text
 - mimetypes/libreoffice-oasis-text-template
 - mimetypes/libreoffice-text
@@ -695,7 +739,8 @@ mail:
 - apps/kmail
 - emblems/emblem-mail
 mattermost:
-- matermost-desktop
+- apps/com.mattermost.Desktop
+- apps/mattermost-desktop
 mediaplayer:
 - apps/mpv
 - categories/applications-multimedia
@@ -710,14 +755,17 @@ microsoft_365:
 microsoft_edge:
 - apps/microsoft-edge
 microsoft_edge_beta:
-- apps/microsft-edge-beta
+- apps/microsoft-edge-beta
 microsoft_edge_dev:
-- apps/microsft-edge-dev
+- apps/microsoft-edge-dev
 microsoft_exchange:
 - apps/goa-account-exchange
+microsoft_outlook:
+- apps/msedge-faolnafnngnfdaknnbpnkhgohbobgegn-Default
 microsoft_planner:
 - apps/microsoft_planner
 microsoft_teams:
+- apps/msedge-cifhbcnohmdccbgoicgdjpfamggdegmo-Default
 - apps/teams
 mindustry:
 - apps/mindustry
@@ -761,6 +809,8 @@ mozc:
 - apps/mozc
 mscore4portable:
 - apps/mscore4portable
+multimc:
+- apps/multimc
 musescore:
 - apps/mscore
 music:
@@ -828,6 +878,8 @@ pico_park_classic:
 phpstorm:
 - apps/com.jetbrains.PhpStorm
 - apps/phpstorm
+parsec:
+- apps/parsecd
 plagueinc:
 - apps/steam_icon_246620
 plants_vs_zombies:
@@ -983,8 +1035,6 @@ simpletexteditor:
 - apps/QOwnNotes
 - apps/kate
 - apps/kate2
-simpleweather:
-- apps/org.gnome.Weather
 skyrim:
 - apps/steam_icon_365720
 - apps/steam_icon_489830
@@ -996,6 +1046,8 @@ slay_the_spire:
 snakebird:
 - apps/steam_icon_1014140
 - apps/steam_icon_357300
+software:
+- apps/org.gnome.Software
 sokpop:
 - apps/steam_icon_1003730
 - apps/steam_icon_1097090
@@ -1172,6 +1224,8 @@ systemusagedirect:
 - categories/applications-system
 taskbar:
 - apps/org.gnome.Settings-multitasking
+teamspeak:
+- apps/teamspeak-client
 telegram:
 - apps/org.telegram.desktop
 - apps/telegram
@@ -1179,9 +1233,11 @@ telegram:
 - apps/telegram-desktop-bin
 terminal:
 - apps/alacritty
+- apps/app.devsuite.Ptyxis
 - apps/com.alacritty.Alacritty
 - apps/foot
 - apps/gnome-xterm
+- apps/org.gnome.Ptyxis
 - apps/org.gnome.Terminal
 - apps/org.xfce.terminal
 - apps/org.xfce.terminalemulator
@@ -1258,9 +1314,12 @@ vivaldi:
 vivaldi_snapshot:
 - apps/vivaldi-snapshot
 vlc:
+- apps/org.videolan.VLC
 - apps/vlc
 - apps/vlc-kb
 - apps/vlc-xmas
+volcanoids:
+- apps/steam_icon_951440
 volume:
 - apps/org.gnome.Settings-sound
 - apps/pavucontrol
@@ -1273,6 +1332,8 @@ vscodium:
 webstorm:
 - apps/com.jetbrains.WebStorm
 - apps/webstorm
+weather:
+- apps/org.gnome.Weather
 whatsapp:
 - apps/whatsapp
 wifi:
@@ -1302,5 +1363,8 @@ yubico_authenticator:
 - apps/yubioath-desktop
 yuzu:
 - apps/yuzu
+zed:
+- apps/dev.zed.Zed
+- apps/zed
 zoom:
 - apps/zoom-desktop
