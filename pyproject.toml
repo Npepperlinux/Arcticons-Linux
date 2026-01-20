@@ -10,8 +10,8 @@ dependencies = [
     "scour>=0.38.2",
 ]
 
-[tool.uv]
-dev-dependencies = [
+[dependency-groups]
+dev = [
     "pre-commit>=3.8.0",
     "types-lxml>=2024.9.16",
 ]
