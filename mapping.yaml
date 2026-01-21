@@ -549,22 +549,22 @@ ghostty:
 - apps/com.mitchellh.ghostty
 ghostwriter:
 - apps/ghostwriter
-github:
-- apps/github-desktop-plus
-- apps/github-desktop
 gimp:
 - apps/gimp
 - apps/org.gimp.GIMP
+github:
+- apps/github-desktop
+- apps/github-desktop-plus
 gnome-tweaks:
 - apps/org.gnome.tweaks
 godot:
 - apps/godot
 - apps/steam_icon_404790
-google:
-- apps/goa-account-google
 goland:
 - apps/com.jetbrains.GoLand
 - apps/goland
+google:
+- apps/goa-account-google
 google_chrome:
 - apps/chromium
 - apps/google-chrome
@@ -869,17 +869,17 @@ papers_please:
 paperwork:
 - apps/paperwork
 - apps/work.openpaper.Paperwork
+parsec:
+- apps/parsecd
+phpstorm:
+- apps/com.jetbrains.PhpStorm
+- apps/phpstorm
 pico_park:
 - apps/steam_icon_1509960
 pico_park_2:
 - apps/steam_icon_2644470
 pico_park_classic:
 - apps/steam_icon_461040
-phpstorm:
-- apps/com.jetbrains.PhpStorm
-- apps/phpstorm
-parsec:
-- apps/parsecd
 plagueinc:
 - apps/steam_icon_246620
 plants_vs_zombies:
@@ -1329,11 +1329,11 @@ vrchat:
 - apps/steam_icon_438100
 vscodium:
 - apps/vscodium
+weather:
+- apps/org.gnome.Weather
 webstorm:
 - apps/com.jetbrains.WebStorm
 - apps/webstorm
-weather:
-- apps/org.gnome.Weather
 whatsapp:
 - apps/whatsapp
 wifi:
