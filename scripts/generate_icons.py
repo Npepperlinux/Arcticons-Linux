@@ -15,7 +15,7 @@ import re
 from shutil import rmtree, which
 import subprocess  # noqa: S404
 import tomllib
-from typing import TypedDict
+from typing import TypedDict, Counter
 
 from lxml import etree
 from scour import scour
@@ -27,7 +27,7 @@ has_inkscape = bool(which("inkscape"))
 
 
 class GeneratorEntry(TypedDict):
-    """A config entry for generationg icons."""
+    """A config entry for generating icons."""
 
     name: str
     comment: str
@@ -45,31 +45,35 @@ type MappingYaml = dict[str, list[str]]
 
 def process_entry(
     entry: str, dests: list[str], destination: Path, config: GeneratorEntry
-) -> None:
-    """Process an entry."""
+) -> Path | None:
+    """Process an entry. Returns the source directory Path used, or None if not found."""
     scalable_root = destination / "scalable"
     symbolic_root = destination / "symbolic"
 
-    LOGGER.info("%s: creating %s", entry, dests)
-
-    if not any((not (scalable_root / (dest + ".svg")).exists()) for dest in dests):
-        LOGGER.info("%s: Skipping, all icons already exist.", entry)
-        return
-
-    dest = dests[0]
-
-    (scalable_root / dest).parent.mkdir(parents=True, exist_ok=True)
-
     src_file = None
+    src_dir_used = None
 
+    # Identify which source path contains the icon
     for src_dir in config["src_paths"]:
         src_path = Path(src_dir)
         if (src_path / f"{entry}.svg").exists():
             src_file = src_path / f"{entry}.svg"
+            src_dir_used = src_path
             break
+
     if src_file is None:
         LOGGER.error("%s: Skipping, icon not found", entry)
-        return
+        return None
+
+    LOGGER.info("%s: found in %s", entry, src_dir_used)
+
+    # Check if we actually need to process the file or if it exists
+    if not any((not (scalable_root / (dest + ".svg")).exists()) for dest in dests):
+        LOGGER.info("%s: Skipping processing, all icons already exist.", entry)
+        return src_dir_used
+
+    dest = dests[0]
+    (scalable_root / dest).parent.mkdir(parents=True, exist_ok=True)
 
     LOGGER.info("%s: %s -> %s", entry, src_file, scalable_root / f"{dest}.svg")
 
@@ -84,7 +88,7 @@ def process_entry(
     style_tag = svg_file.getroot().find(".//{http://www.w3.org/2000/svg}style")
     if style_tag is None or style_tag.text is None:
         LOGGER.error("%s: file %s doesn't have a style tag!", entry, src_file)
-        return
+        return src_dir_used
 
     if "stroke-width" in style_tag.text:
         style_tag.text = re.sub(
@@ -112,16 +116,6 @@ def process_entry(
             )
             (scalable_root / f"{dest_file}.svg").unlink(missing_ok=True)
 
-            LOGGER.info(
-                "%s: symlink: %s -> %s",
-                entry,
-                scalable_root / f"{dest_file}.svg",
-                (scalable_root / f"{dest}.svg").relative_to(
-                    (scalable_root / f"{dest_file}.svg").parent,
-                    walk_up=True,
-                ),
-            )
-
             symlink(
                 (scalable_root / f"{dest}.svg").relative_to(
                     (scalable_root / f"{dest_file}.svg").parent,
@@ -131,13 +125,12 @@ def process_entry(
             )
 
     if not has_inkscape:
-        return
+        return src_dir_used
 
     (symbolic_root / dest).parent.mkdir(exist_ok=True, parents=True)
 
-    LOGGER.info("%s: %s -> %s", entry, src_file, symbolic_root / f"{dest}-symbolic.svg")
-    _ = subprocess.run(  # noqa: S603
-        [  # noqa: S607
+    _ = subprocess.run(
+        [
             "inkscape",
             "--actions=select-all;object-stroke-to-path",
             f"--export-filename={symbolic_root / dest}-symbolic.svg",
@@ -145,12 +138,16 @@ def process_entry(
             scalable_root / f"{dest}.svg",
         ],
         check=False,
+        capture_output=True,
     )
-    with (symbolic_root / f"{dest}-symbolic.svg").open("r+") as symbolic_file:
-        svg_data = scour.scourString(symbolic_file.read())
-        symbolic_file.seek(0)
-        symbolic_file.truncate()
-        symbolic_file.write(svg_data)
+    
+    symbolic_path = symbolic_root / f"{dest}-symbolic.svg"
+    if symbolic_path.exists():
+        with symbolic_path.open("r+") as symbolic_file:
+            svg_data = scour.scourString(symbolic_file.read())
+            symbolic_file.seek(0)
+            symbolic_file.truncate()
+            symbolic_file.write(svg_data)
 
     # remove .0.svg files in case of inkscape crashing
     for file in scalable_root.glob(f"{dest}*.0.svg"):
@@ -164,16 +161,6 @@ def process_entry(
             )
             (symbolic_root / f"{dest_file}-symbolic.svg").unlink(missing_ok=True)
 
-            LOGGER.info(
-                "%s: symlink: %s -> %s",
-                entry,
-                symbolic_root / f"{dest_file}-symbolic.svg",
-                (symbolic_root / f"{dest}-symbolic.svg").relative_to(
-                    (symbolic_root / f"{dest_file}-symbolic.svg").parent,
-                    walk_up=True,
-                ),
-            )
-
             symlink(
                 (symbolic_root / f"{dest}-symbolic.svg").relative_to(
                     (symbolic_root / f"{dest_file}-symbolic.svg").parent,
@@ -181,19 +168,26 @@ def process_entry(
                 ),
                 symbolic_root / f"{dest_file}-symbolic.svg",
             )
+    
+    return src_dir_used
 
 
 def generate_destination(
     destination: Path, config: GeneratorEntry, mapping_yaml: MappingYaml
-) -> None:
-    """Generate the icons in the destination."""
+) -> Counter[str]:
+    """Generate the icons and return source statistics."""
+    stats: Counter[str] = Counter()
     for entry, dests in mapping_yaml.items():
-        process_entry(entry, dests, destination, config)
+        used_path = process_entry(entry, dests, destination, config)
+        if used_path:
+            stats[str(used_path)] += 1
+        else:
+            stats["NOT_FOUND"] += 1
+    return stats
 
 
 def generate_index_theme(destination: Path, config: GeneratorEntry) -> None:
     """Generate the target index.theme file."""
-
     index_theme_file = ConfigParser()
     index_theme_file.optionxform = lambda optionstr: optionstr
     _ = index_theme_file.read("index.theme")
@@ -217,39 +211,43 @@ def main(config_file: Path) -> None:
         mapping_yaml: MappingYaml = yaml.safe_load(yaml_fp)
 
     for section, entry in config.items():
+        dest_path = Path(section)
         if entry["overwrite"]:
-            rmtree(section)
-        elif Path(section).exists():
+            rmtree(section, ignore_errors=True)
+        elif dest_path.exists():
             LOGGER.info('Destination "%s" exists, trying to update.', section)
 
-        generate_destination(Path(section), entry, mapping_yaml)
+        # Run generation and collect stats
+        source_stats = generate_destination(dest_path, entry, mapping_yaml)
 
-        generate_index_theme(Path(section), entry)
+        generate_index_theme(dest_path, entry)
 
         # link all the sizes to scalable
         for folder in (
-            "8x8",
-            "16x16",
-            "16x16@2x",
-            "18x18",
-            "18x18@2x",
-            "22x22",
-            "22x22@2x",
-            "24x24",
-            "24x24@2x",
-            "32x32",
-            "32x32@2x",
-            "42x42",
-            "48x48",
-            "48x48@2x",
-            "64x64",
-            "64x64@2x",
-            "84x84",
-            "96x96",
+            "8x8", "16x16", "16x16@2x", "18x18", "18x18@2x", "22x22",
+            "22x22@2x", "24x24", "24x24@2x", "32x32", "32x32@2x", "42x42",
+            "48x48", "48x48@2x", "64x64", "64x64@2x", "84x84", "96x96",
             "128x128",
         ):
             with contextlib.suppress(FileExistsError):
-                symlink("scalable", Path(section) / folder, target_is_directory=True)
+                symlink("scalable", dest_path / folder, target_is_directory=True)
+
+        # Print Usage Summary
+        print(f"\n{'='*50}")
+        print(f"SUMMARY FOR: {entry['name']}")
+        print(f"{'='*50}")
+        for path in entry["src_paths"]:
+            count = source_stats.get(path, 0)
+            print(f"Source: {path:<30} | Used: {count:>4} icons")
+        
+        missing = source_stats.get("NOT_FOUND", 0)
+        if missing > 0:
+            print(f"Source: {'MISSING/NOT FOUND':<30} | Count: {missing:>4} icons")
+        
+        total = sum(source_stats.values()) - missing
+        print(f"{'-'*50}")
+        print(f"Total Successful Icons: {total}/{len(mapping_yaml)}")
+        print(f"{'='*50}\n")
 
 
 if __name__ == "__main__":
@@ -259,6 +257,6 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
 
-    logging.basicConfig(level=logging.INFO)
+    logging.basicConfig(level=logging.WARN)
 
     main(args.config_file)

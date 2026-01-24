@@ -355,7 +355,7 @@ file_text:
 - mimetypes/text-vnd.trolltech.linguist
 - mimetypes/text-x-generic
 - mimetypes/text-x-modelica
-file_ttexmacs:
+file_texmacs:
 - mimetypes/text-x-texmacs
 file_unit:
 - mimetypes/text-x-systemd-unit
